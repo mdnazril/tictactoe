@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap');
+@import "./variable.scss";
+
+body {
+    margin: 0;
+    font-family: 'Gemunu Libre', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: $navy;
+}

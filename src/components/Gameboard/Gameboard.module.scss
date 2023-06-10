@@ -1,0 +1,128 @@
+@import "../../variable.scss";
+
+.gameContainer {
+    min-height: 100vh;
+    position: relative;
+}
+
+.gameContainer,
+.boardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    color: $white;
+    padding-top: 1rem;
+    margin-bottom: 10px;
+}
+
+.boardContainer {
+    border-collapse: collapse;
+    margin: 1rem;
+}
+
+.boardContainer td .cellBox {
+    background-color: $navy;
+    filter: brightness(1.25);
+    width: 120px;
+    max-width: 25vw;
+    aspect-ratio: 1/1;
+    border-radius: 12px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Muli', sans-serif;
+    font-size: 70px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boardContainer td .cellBox[win='1'] {
+    background-color: $green;
+}
+
+.boardContainer td .cellBox span[wobble='1'] {
+    animation: wobble 0.5s linear;
+}
+
+.boardContainer td .cellBox span[clear='1'] {
+    animation: clear-out 0.25s linear;
+}
+
+.iconContainer {
+    text-align: center;
+}
+
+.icon {
+    color: $white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+h2.status {
+    text-align: center;
+    color: $white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 40%);
+}
+
+.creator {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: $white;
+}
+
+.scoreContainer {
+    display: flex;
+    width: 360px;
+    max-width: 75vw;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    color: $white;
+    font-weight: bold;
+}
+
+@keyframes clear-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes wobble {
+    25% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(-20deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .title {
+        font-size: 3.5rem;
+    }
+}
