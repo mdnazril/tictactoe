@@ -6,5 +6,16 @@ body {
     font-family: 'Gemunu Libre', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.light {
+    background: $orange;
+    background-color: $orange;
+    color: $navy;
+}
+
+.dark {
     background: $navy;
+    background-color: $navy;
+    color: $white;
 }

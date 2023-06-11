@@ -1,9 +1,11 @@
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {MdOutlineRefresh} from "react-icons/md";
 import styles from "./Gameboard.module.scss";
 import "../../variable.scss";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+import {ThemeContext} from "../../context/ThemeContext";
 
-const Gameboard = () => {
+const Gameboard = (props) => {
 
     const [turn, setTurn] = useState('X');
     const [status, setStatus] = useState('');
@@ -99,7 +101,10 @@ const Gameboard = () => {
 
             <h2 className={styles.status}>{status}</h2>
 
-            <p className={styles.creator}>By mdnazril</p>
+            <div className={styles.footer}>
+                <DarkModeToggle />
+                <p className={styles.creator}>By mdnazril</p>
+            </div>
 
         </div>
     );
@@ -212,7 +217,7 @@ const Board = (props) => {
 
             </tbody>
 
-        </table>
+        </table >
     )
 }
 
