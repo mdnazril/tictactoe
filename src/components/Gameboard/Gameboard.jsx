@@ -115,12 +115,12 @@ const ScoreBoard = (props) => {
     const OScores = sessionStorage.getItem('OScore');
 
     const colorFont = (score1, score2) => {
-        if (score1 === score2) {
-            return "var(--white)";
+        if (score1 < score2) {
+            return "var(--red)";
         } else if (score1 > score2) {
             return "var(--green1)";
         } else {
-            return "var(--red)";
+            return;
         }
     };
 
